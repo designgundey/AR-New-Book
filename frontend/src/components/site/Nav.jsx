@@ -33,9 +33,23 @@ export const Nav = ({ onReserve }) => {
                     <button
                         data-testid={TID.nav.reserveCta}
                         onClick={onReserve}
-                        className="text-[13px] px-4 py-2 rounded-full bg-[color:var(--brand)] text-white hover:bg-[color:var(--brand-soft)] transition-colors"
+                        className="group inline-flex items-center gap-2.5 text-[13px] pl-4 pr-2 py-1.5 rounded-full bg-[color:var(--brand)] text-white hover:bg-[color:var(--brand-soft)] transition-colors"
                     >
-                        Reserve — ₹550
+                        <span>Reserve ₹550</span>
+                        <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-white/15 group-hover:bg-white/25 group-hover:translate-x-0.5 transition-all">
+                            <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2.4"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </span>
                     </button>
                 </div>
             </div>
