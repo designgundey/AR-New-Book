@@ -1,5 +1,6 @@
 import React from "react";
 import { TID } from "../../lib/testIds";
+import { InteractiveBook } from "./InteractiveBook";
 
 export const Hero = ({ onReserve, remaining, total }) => {
     return (
@@ -121,37 +122,9 @@ export const Hero = ({ onReserve, remaining, total }) => {
                     </div>
                 </div>
 
-                {/* Right — cover object */}
+                {/* Right — interactive book */}
                 <div className="lg:col-span-5">
-                    <div className="relative">
-                        <div className="absolute -inset-6 md:-inset-10 bg-[color:var(--paper-2)] rounded-[2px]" />
-                        <div className="relative aspect-[3/4] w-full max-w-[420px] ml-auto shadow-[0_30px_80px_-30px_rgba(26,26,26,0.35)]">
-                            <img
-                                data-testid={TID.hero.cover}
-                                src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80"
-                                alt="Book cover — मेरी माँ मेरी गैंगस्टर"
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
-                            <div className="absolute left-5 right-5 bottom-5 text-white">
-                                <div className="text-[10px] tracking-[0.22em] uppercase opacity-80">
-                                    Arundhati Roy
-                                </div>
-                                <div className="hindi text-[22px] leading-tight font-medium mt-1">
-                                    मेरी माँ मेरी गैंगस्टर
-                                </div>
-                                <div className="text-[11px] italic opacity-80 mt-0.5">
-                                    Mother Mary Comes To Me
-                                </div>
-                            </div>
-                            <div className="absolute top-4 right-4 text-[10px] tracking-[0.18em] uppercase px-2 py-1 bg-white/85 text-[color:var(--ink)]">
-                                Signed · 1/1500
-                            </div>
-                        </div>
-                        <div className="mt-6 text-right text-[11px] tracking-[0.2em] uppercase text-[color:var(--ink-mute)]">
-                            Hardcover · राजकमल प्रकाशन
-                        </div>
-                    </div>
+                    <InteractiveBook testId={TID.hero.cover} />
                 </div>
             </div>
         </section>

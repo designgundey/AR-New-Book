@@ -8,6 +8,7 @@ import { About } from "./components/site/About";
 import { Edition } from "./components/site/Edition";
 import { ReservationForm } from "./components/site/ReservationForm";
 import { Footer } from "./components/site/Footer";
+import { SignatureIntro } from "./components/site/SignatureIntro";
 import { TID } from "./lib/testIds";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -20,6 +21,7 @@ function App() {
         remaining: 1500,
         price_inr: 1499,
     });
+    const [introDone, setIntroDone] = useState(false);
     const formRef = useRef(null);
 
     const loadInventory = useCallback(async () => {
@@ -60,6 +62,7 @@ function App() {
 
     return (
         <div className="App paper-bg">
+            {!introDone && <SignatureIntro onDone={() => setIntroDone(true)} />}
             <Toaster position="top-center" richColors />
             <Nav onReserve={scrollToForm} />
 
