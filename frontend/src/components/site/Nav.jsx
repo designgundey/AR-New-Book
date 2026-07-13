@@ -8,13 +8,14 @@ export const Nav = ({ onReserve }) => {
             className="sticky top-0 z-40 border-b hairline bg-[color:var(--paper)]/85 backdrop-blur"
         >
             <div className="max-w-[1240px] mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
-                <div className="flex items-baseline gap-3">
-                    <span className="text-[13px] tracking-[0.18em] uppercase text-[color:var(--ink)] font-medium">
-                        Rajkamal
-                    </span>
-                    <span className="text-[11px] tracking-[0.14em] uppercase text-[color:var(--ink-mute)]">
-                        राजकमल प्रकाशन
-                    </span>
+                <div className="flex items-center gap-3">
+                    <img
+                        data-testid="nav-logo"
+                        src="https://customer-assets.emergentagent.com/job_arundhati-reads/artifacts/twqhvq20_logo%20rkp.png"
+                        alt="Rajkamal Prakashan · राजकमल प्रकाशन"
+                        className="h-9 md:h-10 w-auto select-none"
+                        draggable={false}
+                    />
                 </div>
                 <div className="flex items-center gap-6">
                     <a

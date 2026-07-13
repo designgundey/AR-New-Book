@@ -56,7 +56,7 @@ export const InteractiveBook = ({ testId }) => {
             <div
                 className="relative mx-auto"
                 style={{
-                    width: "min(92%, 460px)",
+                    width: "min(92%, 480px)",
                     aspectRatio: "3 / 4",
                     transform: `rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)`,
                     transformStyle: "preserve-3d",
@@ -67,77 +67,40 @@ export const InteractiveBook = ({ testId }) => {
             >
                 {/* Soft floor shadow */}
                 <div
-                    className="absolute left-1/2 -translate-x-1/2 rounded-[50%] blur-2xl"
+                    className="absolute left-1/2 -translate-x-1/2 rounded-[50%] blur-2xl pointer-events-none"
                     style={{
-                        bottom: "-8%",
-                        width: "78%",
-                        height: "14%",
-                        background: "rgba(20, 18, 15, 0.35)",
+                        bottom: "-4%",
+                        width: "72%",
+                        height: "10%",
+                        background: "rgba(20, 18, 15, 0.28)",
                         transform: "translateZ(-40px)",
                     }}
                 />
 
-                {/* Back cover / depth plate */}
-                <div
-                    className="absolute inset-0 bg-[#7a1414]"
+                {/* Book image — transparent PNG shown directly, no clipping plate */}
+                <img
+                    src={BOOK_URL}
+                    alt="मेरी माँ मेरी गैंगस्टर — Book cover"
+                    className="relative w-full h-full object-contain select-none"
+                    draggable={false}
                     style={{
-                        transform: "translateZ(-14px)",
-                        borderRadius: "1px 3px 3px 1px",
-                        boxShadow: "0 30px 60px -20px rgba(0,0,0,0.35)",
+                        filter: "drop-shadow(0 30px 40px rgba(0,0,0,0.28)) drop-shadow(0 6px 10px rgba(0,0,0,0.18))",
                     }}
                 />
 
-                {/* Cover */}
+                {/* Dynamic glare that follows the cursor */}
                 <div
-                    className="absolute inset-0 overflow-hidden"
+                    className="absolute inset-0 pointer-events-none transition-opacity duration-300"
                     style={{
-                        transformStyle: "preserve-3d",
-                        borderRadius: "1px 3px 3px 1px",
-                        boxShadow:
-                            "0 40px 80px -30px rgba(0,0,0,0.5), 0 2px 0 rgba(255,255,255,0.06) inset",
+                        background: `radial-gradient(220px circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.20), rgba(255,255,255,0) 55%)`,
+                        mixBlendMode: "screen",
+                        opacity: hovered ? 1 : 0,
                     }}
-                >
-                    <img
-                        src={BOOK_URL}
-                        alt="मेरी माँ मेरी गैंगस्टर — Book cover"
-                        className="absolute inset-0 w-full h-full object-cover select-none"
-                        draggable={false}
-                    />
-
-                    {/* Spine gradient (subtle depth on left edge) */}
-                    <div
-                        className="absolute inset-y-0 left-0 w-4 pointer-events-none"
-                        style={{
-                            background:
-                                "linear-gradient(to right, rgba(0,0,0,0.35), rgba(0,0,0,0))",
-                        }}
-                    />
-
-                    {/* Dynamic glare that follows the cursor */}
-                    <div
-                        className="absolute inset-0 pointer-events-none transition-opacity duration-300"
-                        style={{
-                            background: `radial-gradient(220px circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.30), rgba(255,255,255,0) 55%)`,
-                            mixBlendMode: "screen",
-                            opacity: hovered ? 1 : 0,
-                        }}
-                    />
-
-                    {/* Grain overlay */}
-                    <div
-                        className="absolute inset-0 pointer-events-none opacity-[0.06]"
-                        style={{
-                            backgroundImage:
-                                "radial-gradient(rgba(255,255,255,0.9) 1px, transparent 1px)",
-                            backgroundSize: "3px 3px",
-                            mixBlendMode: "overlay",
-                        }}
-                    />
-                </div>
+                />
 
                 {/* Edition badge */}
                 <div
-                    className="absolute top-4 right-4 text-[10px] tracking-[0.2em] uppercase px-2 py-1 bg-white/90 text-[color:var(--ink)]"
+                    className="absolute top-2 right-2 md:top-3 md:right-3 text-[10px] tracking-[0.2em] uppercase px-2 py-1 bg-white/90 text-[color:var(--ink)]"
                     style={{ transform: "translateZ(30px)" }}
                 >
                     Signed · 1 / 1500
