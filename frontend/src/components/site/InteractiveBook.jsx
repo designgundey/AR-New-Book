@@ -99,7 +99,7 @@ export const InteractiveBook = ({ testId }) => {
 
                 {/* Edition badge */}
                 <div
-                    className="absolute top-2 right-2 md:top-3 md:right-3 text-[10px] tracking-[0.2em] uppercase px-2 py-1 bg-white/90 text-[color:var(--ink)]"
+                    className="absolute top-2 right-2 md:top-3 md:right-3 text-[10px] tracking-[0.2em] uppercase px-2.5 py-1 bg-[color:var(--accent)] text-white font-medium rounded-sm"
                     style={{ transform: "translateZ(30px)" }}
                 >
                     Signed · 1 / 1500
@@ -107,7 +107,7 @@ export const InteractiveBook = ({ testId }) => {
             </div>
 
             <div className="mt-6 text-center text-[11px] tracking-[0.22em] uppercase text-[color:var(--ink-mute)]">
-                Hardcover · राजकमल प्रकाशन
+                Paperback · राजकमल प्रकाशन
                 <span className="mx-2 text-[color:var(--line)]">·</span>
                 <span className="text-[color:var(--ink-soft)]">Hover to tilt</span>
             </div>

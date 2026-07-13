@@ -59,7 +59,7 @@ export const Nav = ({ onReserve, remaining, total }) => {
                         onClick={onReserve}
                         className="group inline-flex items-center gap-2.5 text-[13px] pl-4 pr-2 py-1.5 rounded-full bg-[color:var(--brand)] text-white hover:bg-[color:var(--brand-soft)] transition-colors"
                     >
-                        <span>Reserve ₹550</span>
+                        <span>Reserve Signed Copy · ₹550</span>
                         <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-white/15 group-hover:bg-white/25 group-hover:translate-x-0.5 transition-all">
                             <svg
                                 width="14"

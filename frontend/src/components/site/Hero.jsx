@@ -11,16 +11,16 @@ export const Hero = ({ onReserve, remaining, total }) => {
             <div className="max-w-[1240px] mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-16 md:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
                 {/* Left — editorial */}
                 <div className="lg:col-span-7">
-                    <div className="mb-10 inline-flex items-center gap-2.5 border hairline bg-white/70 backdrop-blur px-3.5 py-1.5 rounded-full">
+                    <div className="mb-10 inline-flex items-center gap-2.5 border border-[color:var(--accent)]/30 bg-[color:var(--accent)]/[0.07] backdrop-blur px-4 py-2 rounded-full">
                         <span className="relative flex h-1.5 w-1.5">
                             <span className="absolute inline-flex h-full w-full rounded-full bg-[color:var(--accent)] opacity-60 animate-ping" />
                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[color:var(--accent)]" />
                         </span>
-                        <span className="text-[10.5px] tracking-[0.24em] uppercase text-[color:var(--ink)] font-medium">
-                            Signature copy
+                        <span className="text-[10.5px] tracking-[0.24em] uppercase text-[color:var(--accent)] font-semibold">
+                            Signed copy
                         </span>
-                        <span className="text-[color:var(--line)]">·</span>
-                        <span className="hindi text-[11px] tracking-[0.08em] text-[color:var(--ink-soft)]">
+                        <span className="text-[color:var(--accent)]/40">·</span>
+                        <span className="hindi text-[11px] tracking-[0.08em] text-[color:var(--accent)] font-medium">
                             हस्ताक्षरित प्रति
                         </span>
                     </div>
@@ -68,7 +68,7 @@ export const Hero = ({ onReserve, remaining, total }) => {
                             onClick={onReserve}
                             className="group inline-flex items-center gap-3 rounded-full bg-[color:var(--brand)] text-white pl-6 pr-2 py-2 text-[14.5px] hover:bg-[color:var(--brand-soft)] transition-colors"
                         >
-                            <span>Reserve your copy</span>
+                            <span>Reserve your signed copy</span>
                             <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/15 group-hover:bg-white/25 group-hover:translate-x-1 transition-all">
                                 <svg
                                     width="18"

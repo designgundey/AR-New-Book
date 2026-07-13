@@ -187,7 +187,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                 />
                 <div className="flex flex-col justify-end">
                     <div className="text-[11px] tracking-[0.18em] uppercase text-[color:var(--ink-mute)] mb-2">
-                        Copies{" "}
+                        Limited Copies Available{" "}
                         <span className="normal-case tracking-normal opacity-70">
                             (max 3)
                         </span>
