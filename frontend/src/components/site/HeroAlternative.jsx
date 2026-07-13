@@ -99,9 +99,8 @@ export const HeroAlternative = ({ onReserve, remaining, total }) => {
                     <div className="relative w-full flex items-center justify-center">
                         {/* Book 2 (Left Back) */}
                         <div 
-                            className="absolute w-[180px] sm:w-[220px] md:w-[250px] aspect-[3/4] opacity-55 select-none pointer-events-none transition-all duration-300"
+                            className="absolute w-[180px] sm:w-[220px] md:w-[250px] aspect-[3/4] opacity-55 select-none pointer-events-none transition-all duration-300 book-stack-left"
                             style={{ 
-                                transform: "translateX(-80px) translateY(8px) rotate(-11deg) scale(0.91)",
                                 filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.22))",
                                 zIndex: 1
                             }}
@@ -115,9 +114,8 @@ export const HeroAlternative = ({ onReserve, remaining, total }) => {
 
                         {/* Book 3 (Right Back) */}
                         <div 
-                            className="absolute w-[180px] sm:w-[220px] md:w-[250px] aspect-[3/4] opacity-45 select-none pointer-events-none transition-all duration-300"
+                            className="absolute w-[180px] sm:w-[220px] md:w-[250px] aspect-[3/4] opacity-45 select-none pointer-events-none transition-all duration-300 book-stack-right"
                             style={{ 
-                                transform: "translateX(80px) translateY(12px) rotate(13deg) scale(0.87)",
                                 filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.22))",
                                 zIndex: 2
                             }}
