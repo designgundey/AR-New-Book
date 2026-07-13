@@ -1,56 +1,131 @@
-import { useEffect } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
-import { HOME } from "@/constants/testIds";
+import { Toaster } from "sonner";
+import { Nav } from "./components/site/Nav";
+import { TopStrip } from "./components/site/TopStrip";
+import { Hero } from "./components/site/Hero";
+import { About } from "./components/site/About";
+import { Edition } from "./components/site/Edition";
+import { ReservationForm } from "./components/site/ReservationForm";
+import { Footer } from "./components/site/Footer";
+import { TID } from "./lib/testIds";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
-
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+    const [inv, setInv] = useState({
+        total: 1500,
+        reserved: 0,
+        remaining: 1500,
+        price_inr: 1499,
+    });
+    const formRef = useRef(null);
+
+    const loadInventory = useCallback(async () => {
+        try {
+            const { data } = await axios.get(`${API}/inventory`);
+            setInv(data);
+        } catch (e) {
+            /* silent */
+        }
+    }, []);
+
+    useEffect(() => {
+        loadInventory();
+    }, [loadInventory]);
+
+    const scrollToForm = useCallback(() => {
+        if (formRef.current) {
+            formRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    }, []);
+
+    // Simple reveal-on-scroll
+    useEffect(() => {
+        const io = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((e) => {
+                    if (e.isIntersecting) e.target.classList.add("in");
+                });
+            },
+            { threshold: 0.14 },
+        );
+        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+        return () => io.disconnect();
+    }, []);
+
+    return (
+        <div className="App paper-bg">
+            <Toaster position="top-center" richColors />
+            <TopStrip />
+            <Nav onReserve={scrollToForm} />
+
+            <main>
+                <div className="reveal in">
+                    <Hero
+                        onReserve={scrollToForm}
+                        remaining={inv.remaining}
+                        total={inv.total}
+                    />
+                </div>
+
+                <div className="reveal">
+                    <About />
+                </div>
+
+                <div className="reveal">
+                    <Edition
+                        remaining={inv.remaining}
+                        total={inv.total}
+                        reserved={inv.reserved}
+                    />
+                </div>
+
+                <section
+                    id="reserve"
+                    data-testid={TID.form.section}
+                    className="border-b hairline"
+                >
+                    <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-24 md:py-28 grid grid-cols-1 md:grid-cols-12 gap-10">
+                        <div className="md:col-span-4">
+                            <div className="text-[11px] tracking-[0.22em] uppercase text-[color:var(--ink-mute)]">
+                                अभी बुक करें · Reserve now
+                            </div>
+                            <h2 className="hindi mt-5 text-3xl md:text-[42px] leading-[1.15] font-medium tracking-tight">
+                                अपनी क्रमांकित प्रति सुरक्षित करें।
+                            </h2>
+                            <p className="mt-3 text-[16px] italic text-[color:var(--ink-soft)]">
+                                Reserve your numbered copy.
+                            </p>
+                            <p className="mt-6 max-w-sm text-[14px] leading-[1.7] text-[color:var(--ink-mute)]">
+                                1500 में से एक बनें। भुगतान होते ही आपकी एडिशन
+                                संख्या आरक्षित हो जाती है और लॉन्च पर सीधे आपके
+                                पते पर पहुँचती है।
+                            </p>
+                            <p className="mt-2 max-w-sm text-[12.5px] leading-[1.7] text-[color:var(--ink-mute)] italic">
+                                Be one of 1500. Your edition number is reserved
+                                the moment you pay, and ships straight to your
+                                door at launch.
+                            </p>
+                        </div>
+                        <div className="md:col-span-8">
+                            <ReservationForm
+                                ref={formRef}
+                                onReserved={loadInventory}
+                            />
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
