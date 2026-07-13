@@ -64,7 +64,11 @@ function App() {
         <div className="App paper-bg">
             {!introDone && <SignatureIntro onDone={() => setIntroDone(true)} />}
             <Toaster position="top-center" richColors />
-            <Nav onReserve={scrollToForm} />
+            <Nav
+                onReserve={scrollToForm}
+                remaining={inv.remaining}
+                total={inv.total}
+            />
 
             <main>
                 <div className="reveal in">

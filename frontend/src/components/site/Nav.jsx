@@ -1,13 +1,14 @@
 import React from "react";
 import { TID } from "../../lib/testIds";
+import { CountUp } from "./CountUp";
 
-export const Nav = ({ onReserve }) => {
+export const Nav = ({ onReserve, remaining, total }) => {
     return (
         <nav
             data-testid={TID.nav.root}
             className="sticky top-0 z-40 border-b hairline bg-[color:var(--paper)]/85 backdrop-blur"
         >
-            <div className="max-w-[1240px] mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
+            <div className="max-w-[1240px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                     <img
                         data-testid="nav-logo"
@@ -17,16 +18,39 @@ export const Nav = ({ onReserve }) => {
                         draggable={false}
                     />
                 </div>
+
+                {/* Middle — live copies counter */}
+                <div
+                    data-testid="nav-copies-counter"
+                    className="hidden md:flex items-center gap-3"
+                >
+                    <span className="relative flex h-1.5 w-1.5">
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-[color:var(--brand)] opacity-70 animate-ping" />
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[color:var(--brand)]" />
+                    </span>
+                    <div className="flex items-baseline gap-2">
+                        <CountUp
+                            to={remaining}
+                            className="text-[19px] leading-none font-medium tracking-tight text-[color:var(--brand)]"
+                            testId="nav-remaining-count"
+                            duration={2000}
+                        />
+                        <span className="text-[11px] tracking-[0.18em] uppercase text-[color:var(--ink-mute)]">
+                            / {total} copies remaining
+                        </span>
+                    </div>
+                </div>
+
                 <div className="flex items-center gap-6">
                     <a
                         href="#about"
-                        className="hidden sm:inline text-[13px] tracking-wide text-[color:var(--ink-soft)] hover:text-[color:var(--ink)] transition-colors"
+                        className="hidden lg:inline text-[13px] tracking-wide text-[color:var(--ink-soft)] hover:text-[color:var(--ink)] transition-colors"
                     >
                         About
                     </a>
                     <a
                         href="#edition"
-                        className="hidden sm:inline text-[13px] tracking-wide text-[color:var(--ink-soft)] hover:text-[color:var(--ink)] transition-colors"
+                        className="hidden lg:inline text-[13px] tracking-wide text-[color:var(--ink-soft)] hover:text-[color:var(--ink)] transition-colors"
                     >
                         Edition
                     </a>
