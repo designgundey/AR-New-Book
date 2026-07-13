@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { TID } from "../../lib/testIds";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://arundhati-reads.preview.emergentagent.com";
 const API = `${BACKEND_URL}/api`;
 
 const initial = {

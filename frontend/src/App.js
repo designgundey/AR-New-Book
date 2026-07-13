@@ -11,7 +11,7 @@ import { Footer } from "./components/site/Footer";
 import { SignatureIntro } from "./components/site/SignatureIntro";
 import { TID } from "./lib/testIds";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://arundhati-reads.preview.emergentagent.com";
 const API = `${BACKEND_URL}/api`;
 
 function App() {
