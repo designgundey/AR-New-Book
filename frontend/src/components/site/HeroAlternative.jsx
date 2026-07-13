@@ -56,6 +56,21 @@ export const HeroAlternative = ({ onReserve, remaining, total }) => {
                 
                 {/* Top Section — Center Aligned Titles */}
                 <div className="flex flex-col items-center max-w-4xl">
+                    {/* Centered Premium Signature Copy Bubble */}
+                    <div className="mb-6 inline-flex items-center gap-2.5 border border-[color:var(--accent)]/30 bg-[color:var(--accent)]/[0.07] backdrop-blur px-4 py-2 rounded-full w-fit">
+                        <span className="relative flex h-1.5 w-1.5">
+                            <span className="absolute inline-flex h-full w-full rounded-full bg-[color:var(--accent)] opacity-60 animate-ping" />
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[color:var(--accent)]" />
+                        </span>
+                        <span className="text-[10px] tracking-[0.24em] uppercase text-[color:var(--accent)] font-bold">
+                            Signature Copy
+                        </span>
+                        <span className="text-[color:var(--accent)]/40">·</span>
+                        <span className="hindi text-[11px] tracking-[0.08em] text-[color:var(--accent)] font-medium">
+                            हस्ताक्षरित प्रति
+                        </span>
+                    </div>
+
                     <h1
                         data-testid={TID.hero.titleHi}
                         className="hindi text-[44px] leading-[1.1] sm:text-[60px] md:text-[76px] lg:text-[84px] font-bold text-[color:var(--ink)] tracking-[-0.03em] text-center"

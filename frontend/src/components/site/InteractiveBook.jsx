@@ -108,8 +108,6 @@ export const InteractiveBook = ({ testId }) => {
 
             <div className="mt-6 text-center text-[11px] tracking-[0.22em] uppercase text-[color:var(--ink-mute)]">
                 Paperback · राजकमल प्रकाशन
-                <span className="mx-2 text-[color:var(--line)]">·</span>
-                <span className="text-[color:var(--ink-soft)]">Hover to tilt</span>
             </div>
         </div>
     );
