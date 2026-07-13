@@ -4,6 +4,7 @@ import axios from "axios";
 import { Toaster } from "sonner";
 import { Nav } from "./components/site/Nav";
 import { Hero } from "./components/site/Hero";
+import { HeroAlternative } from "./components/site/HeroAlternative";
 import { About } from "./components/site/About";
 import { Edition } from "./components/site/Edition";
 import { ReservationForm } from "./components/site/ReservationForm";
@@ -13,6 +14,15 @@ import { TID } from "./lib/testIds";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://arundhati-reads.preview.emergentagent.com";
 const API = `${BACKEND_URL}/api`;
+
+const pathname = window.location.pathname.toLowerCase();
+const searchParams = new URLSearchParams(window.location.search);
+const isAlternative = 
+    pathname.includes("/alternative") || 
+    pathname.includes("/v2") || 
+    pathname.includes("/exclusive") ||
+    searchParams.get("v") === "2" ||
+    searchParams.get("variant") === "alternative";
 
 function App() {
     const [inv, setInv] = useState({
@@ -72,11 +82,19 @@ function App() {
 
             <main>
                 <div className="reveal in">
-                    <Hero
-                        onReserve={scrollToForm}
-                        remaining={inv.remaining}
-                        total={inv.total}
-                    />
+                    {isAlternative ? (
+                        <HeroAlternative
+                            onReserve={scrollToForm}
+                            remaining={inv.remaining}
+                            total={inv.total}
+                        />
+                    ) : (
+                        <Hero
+                            onReserve={scrollToForm}
+                            remaining={inv.remaining}
+                            total={inv.total}
+                        />
+                    )}
                 </div>
 
                 <div className="reveal">
