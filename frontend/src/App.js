@@ -32,7 +32,21 @@ function App() {
         price_inr: 550,
     });
     const [introDone, setIntroDone] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const formRef = useRef(null);
+
+    useEffect(() => {
+        if (!isAlternative) return;
+        const handleScroll = () => {
+            if (window.scrollY > 80) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const loadInventory = useCallback(async () => {
         try {
@@ -74,11 +88,13 @@ function App() {
         <div className="App paper-bg">
             {!introDone && <SignatureIntro onDone={() => setIntroDone(true)} />}
             <Toaster position="top-center" richColors />
-            <Nav
-                onReserve={scrollToForm}
-                remaining={inv.remaining}
-                total={inv.total}
-            />
+            <div className={`sticky top-0 z-40 w-full transition-all duration-500 ease-in-out ${isAlternative && !scrolled ? "opacity-0 -translate-y-full pointer-events-none" : "opacity-100 translate-y-0"}`}>
+                <Nav
+                    onReserve={scrollToForm}
+                    remaining={inv.remaining}
+                    total={inv.total}
+                />
+            </div>
 
             <main>
                 <div className="reveal in">
