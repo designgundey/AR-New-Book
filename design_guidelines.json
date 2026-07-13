@@ -1,0 +1,94 @@
+{
+  "project_name": "Arundhuti Ray Book Launch",
+  "theme": "Editorial Minimalist",
+  "typography": {
+    "font_families": {
+      "primary": "'Google Sans', sans-serif"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight",
+      "h2": "text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight",
+      "h3": "text-xl md:text-2xl font-medium",
+      "body": "text-base md:text-lg font-normal leading-relaxed",
+      "subtle": "text-sm text-secondary font-normal"
+    },
+    "rules": [
+      "Headings strictly weight 500 (Medium/font-medium).",
+      "Body strictly weight 400 (Regular/font-normal).",
+      "Bilingual hierarchy: Hindi is primary (larger, darker), English is secondary (smaller, lighter opacity, subtle underneath)."
+    ]
+  },
+  "colors": {
+    "background": {
+      "primary": "#F8F7F4",
+      "secondary": "#EFECE5",
+      "surface": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#1A1A1A",
+      "secondary": "#5C5C5C",
+      "accent": "#1A4B84"
+    },
+    "brand": {
+      "primary": "#1A4B84",
+      "border": "#E5E2DC"
+    }
+  },
+  "layouts": {
+    "hero": "Asymmetric split layout. Left side: Text content (Bilingual title, author, price, CTA). Right side: Large book cover placeholder image with generous padding. Use min-h-[80vh].",
+    "about": "Editorial single-column layout. max-w-2xl centered. High line-height, sophisticated spacing. No boxes or borders.",
+    "signed_edition": "Horizontal flex or CSS grid (1 md:2). Image of signature/pen on one side, details on the other. Use the accent blue color subtly for text or 1px border.",
+    "reservation_form": "Minimalist grid form (Shadcn customized). 2 columns for smaller fields (name, phone, city, pin), 1 column for email/address. Pill-shaped or sharp rectangular submit button.",
+    "countdown_strip": "A sticky bottom or subtle inline strip showing 'Only 1500 Copies Available' or a countdown. Minimal, not a full section."
+  },
+  "content": {
+    "hero": {
+      "title_hindi": "मेरी माँ मेरी गैंगस्टर",
+      "title_english": "Mother Mary Comes To Me",
+      "author": "Arundhuti Ray",
+      "translator": "[Translator Name]",
+      "price": "₹1499",
+      "cta": "Reserve Now"
+    },
+    "signed_edition": {
+      "title": "Limited Edition",
+      "details": "1500 numbered signed copies. Signed with a blue gel pen by the author."
+    },
+    "form_fields": ["Name", "Email", "Phone", "Address", "City", "PIN", "Copies (1-3)"]
+  },
+  "component_styles": {
+    "buttons": "Flat, pill-shaped (rounded-full) or sharp rectangular with 1px border. Background: #1A1A1A, Text: #FFFFFF. Hover: #333333. Use accent color only for primary CTA.",
+    "inputs": "Shadcn default but remove focus rings and use thin 1px border (#E5E2DC). Background transparent or white. Flat look.",
+    "cards": "Avoid typical cards. If necessary, use flat surfaces with 1px subtle borders (border-[#E5E2DC]) and no drop shadows."
+  },
+  "image_urls": {
+    "book_cover_placeholder": {
+      "url": "https://images.pexels.com/photos/10939170/pexels-photo-10939170.jpeg",
+      "description": "Minimal close-up of a hardcover book. Use in the Hero section."
+    },
+    "signature_detail": {
+      "url": "https://images.unsplash.com/photo-1455390582262-044cdead277a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxwZW4lMjBvbiUyMHBhcGVyJTIwc2lnbmF0dXJlfGVufDB8fHx8MTc4Mjc0OTQzNXww&ixlib=rb-4.1.0&q=85",
+      "description": "Close up of a fountain pen on paper. Use in the Signed Limited Edition details block."
+    }
+  },
+  "visual_enhancers": {
+    "spacing": "Use 2x normal spacing. p-8, p-12, gap-12, py-24. Generous negative space.",
+    "motion": "Very subtle fade-in-up (Framer Motion) on scroll. Micro-interactions on buttons.",
+    "borders": "1px solid #E5E2DC for dividing sections instead of background color changes."
+  },
+  "instructions_to_main_agent": [
+    "IMPORT GOOGLE SANS: Since Google Sans is a proprietary font, add a web font import or define the font-family specifically for 'Google Sans', falling back to 'sans-serif' if needed. Ensure to use standard Tailwind weights.",
+    "DO NOT use generic centered card grids.",
+    "Use Hindi text for the primary titles and English as a smaller, subtle subtitle right below it (e.g., text-sm text-secondary).",
+    "Keep the form strictly functional but beautiful: use Shadcn UI with customized, minimal styling.",
+    "No purple gradients, no AI-slop typical UI patterns.",
+    "The background should be a warm paper tone (#F8F7F4)."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Create depth through layered design elements with z-index hierarchy, but keep styling flat for this minimalist editorial look.",
+    "Do not apply `transition: all` globally.",
+    "Do not center-align the app container (`.App { text-align: center; }`).",
+    "Use sonner for toast notifications (e.g., upon form submission with a success/thank you state).",
+    "Add `data-testid` to all interactive elements for robust testing."
+  ]
+}
