@@ -3,7 +3,6 @@ import "@/App.css";
 import axios from "axios";
 import { Toaster } from "sonner";
 import { Nav } from "./components/site/Nav";
-import { TopStrip } from "./components/site/TopStrip";
 import { Hero } from "./components/site/Hero";
 import { About } from "./components/site/About";
 import { Edition } from "./components/site/Edition";
@@ -62,7 +61,6 @@ function App() {
     return (
         <div className="App paper-bg">
             <Toaster position="top-center" richColors />
-            <TopStrip />
             <Nav onReserve={scrollToForm} />
 
             <main>
