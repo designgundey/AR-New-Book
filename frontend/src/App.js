@@ -95,20 +95,12 @@ function App() {
                     <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-24 md:py-28 grid grid-cols-1 md:grid-cols-12 gap-10">
                         <div className="md:col-span-4">
                             <div className="text-[11px] tracking-[0.22em] uppercase text-[color:var(--ink-mute)]">
-                                अभी बुक करें · Reserve now
+                                Reserve now
                             </div>
-                            <h2 className="hindi mt-5 text-3xl md:text-[42px] leading-[1.15] font-medium tracking-tight">
-                                अपनी क्रमांकित प्रति सुरक्षित करें।
-                            </h2>
-                            <p className="mt-3 text-[16px] italic text-[color:var(--ink-soft)]">
+                            <h2 className="mt-5 text-3xl md:text-[42px] leading-[1.15] font-medium tracking-tight">
                                 Reserve your numbered copy.
-                            </p>
+                            </h2>
                             <p className="mt-6 max-w-sm text-[14px] leading-[1.7] text-[color:var(--ink-mute)]">
-                                1500 में से एक बनें। भुगतान होते ही आपकी एडिशन
-                                संख्या आरक्षित हो जाती है और लॉन्च पर सीधे आपके
-                                पते पर पहुँचती है।
-                            </p>
-                            <p className="mt-2 max-w-sm text-[12.5px] leading-[1.7] text-[color:var(--ink-mute)] italic">
                                 Be one of 1500. Your edition number is reserved
                                 the moment you pay, and ships straight to your
                                 door at launch.

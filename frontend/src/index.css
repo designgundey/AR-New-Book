@@ -11,6 +11,8 @@
     --line: #d9d4c8;
     --accent: #1a4b84; /* signature blue gel pen */
     --accent-soft: #244f80;
+    --brand: #cb2323; /* Rajkamal brand red — matches book jacket */
+    --brand-soft: #a51818;
 }
 
 html,

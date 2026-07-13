@@ -66,13 +66,9 @@ export const Hero = ({ onReserve, remaining, total }) => {
                         <button
                             data-testid={TID.hero.reserveCta}
                             onClick={onReserve}
-                            className="group inline-flex items-center gap-3 rounded-full bg-[color:var(--ink)] text-[color:var(--paper)] px-6 py-3.5 text-[14.5px] hover:bg-[color:var(--accent)] transition-colors"
+                            className="group inline-flex items-center gap-3 rounded-full bg-[color:var(--brand)] text-white px-6 py-3.5 text-[14.5px] hover:bg-[color:var(--brand-soft)] transition-colors"
                         >
-                            <span>अपनी प्रति सुरक्षित करें</span>
-                            <span className="opacity-60 text-[12px]">·</span>
-                            <span className="opacity-80 text-[12.5px]">
-                                Reserve your copy
-                            </span>
+                            <span>Reserve your copy</span>
                             <span className="translate-x-0 group-hover:translate-x-1 transition-transform">
                                 →
                             </span>
@@ -112,7 +108,7 @@ export const Hero = ({ onReserve, remaining, total }) => {
                             <div className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--ink-mute)]">
                                 Remaining
                             </div>
-                            <div className="mt-1 text-[15px] text-[color:var(--accent)]">
+                            <div className="mt-1 text-[15px] text-[color:var(--brand)]">
                                 {remaining}
                             </div>
                         </div>

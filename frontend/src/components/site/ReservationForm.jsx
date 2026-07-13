@@ -38,13 +38,13 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
             const res = await axios.post(`${API}/reservations`, form);
             setSuccess(res.data);
             onReserved && onReserved();
-            toast.success("प्रति सुरक्षित हो गई · Copy reserved", {
+            toast.success("Copy reserved", {
                 description: `Edition № ${String(res.data.edition_number).padStart(4, "0")} / 1500`,
             });
         } catch (err) {
             const msg =
                 err?.response?.data?.detail ||
-                "कुछ गलत हो गया · Something went wrong";
+                "Something went wrong. Please try again.";
             toast.error(String(msg));
         } finally {
             setSubmitting(false);
@@ -61,13 +61,13 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                 className="border hairline bg-[color:var(--paper-2)]/60 p-8 md:p-12"
             >
                 <div className="text-[11px] tracking-[0.22em] uppercase text-[color:var(--accent)]">
-                    ✓ Reserved · सुरक्षित
+                    ✓ Reserved
                 </div>
-                <h3 className="hindi mt-4 text-3xl md:text-4xl font-medium tracking-tight">
-                    धन्यवाद, {success.full_name.split(" ")[0]}।
+                <h3 className="mt-4 text-3xl md:text-4xl font-medium tracking-tight">
+                    Thank you, {success.full_name.split(" ")[0]}.
                 </h3>
                 <p className="mt-2 text-[color:var(--ink-soft)] italic">
-                    Thank you — your numbered edition is set aside.
+                    Your numbered edition is set aside.
                 </p>
 
                 <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t hairline pt-6">
@@ -120,9 +120,9 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
             <div className="flex items-baseline justify-between border-b hairline pb-4">
                 <div>
                     <div className="text-[11px] tracking-[0.22em] uppercase text-[color:var(--ink-mute)]">
-                        बुकिंग विवरण · Booking details
+                        Booking details
                     </div>
-                    <div className="hindi mt-2 text-[22px] font-medium">
+                    <div className="mt-2 text-[22px] font-medium">
                         Signed Limited Edition
                     </div>
                 </div>
@@ -136,7 +136,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
                 <Field
-                    label="पूरा नाम · Full name"
+                    label="Full name"
                     testId={TID.form.fullName}
                     value={form.full_name}
                     onChange={setField("full_name")}
@@ -144,7 +144,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                     placeholder="Arundhati R."
                 />
                 <Field
-                    label="ईमेल · Email"
+                    label="Email"
                     testId={TID.form.email}
                     type="email"
                     value={form.email}
@@ -153,7 +153,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                     placeholder="you@example.com"
                 />
                 <Field
-                    label="फ़ोन · Phone"
+                    label="Phone"
                     testId={TID.form.phone}
                     value={form.phone}
                     onChange={setField("phone")}
@@ -161,7 +161,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                     placeholder="+91 98xxxxxxxx"
                 />
                 <Field
-                    label="शहर · City"
+                    label="City"
                     testId={TID.form.city}
                     value={form.city}
                     onChange={setField("city")}
@@ -169,7 +169,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                     placeholder="Delhi"
                 />
                 <Field
-                    label="पता · Address"
+                    label="Address"
                     testId={TID.form.address}
                     value={form.address}
                     onChange={setField("address")}
@@ -178,7 +178,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                     full
                 />
                 <Field
-                    label="पिन कोड · PIN code"
+                    label="PIN code"
                     testId={TID.form.pin}
                     value={form.pin_code}
                     onChange={setField("pin_code")}
@@ -187,7 +187,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                 />
                 <div className="flex flex-col justify-end">
                     <div className="text-[11px] tracking-[0.18em] uppercase text-[color:var(--ink-mute)] mb-2">
-                        प्रतियाँ · Copies{" "}
+                        Copies{" "}
                         <span className="normal-case tracking-normal opacity-70">
                             (max 3)
                         </span>
@@ -235,10 +235,10 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                     type="submit"
                     data-testid={TID.form.submit}
                     disabled={submitting}
-                    className="inline-flex items-center gap-3 rounded-full bg-[color:var(--ink)] text-[color:var(--paper)] px-6 py-3.5 text-[14.5px] hover:bg-[color:var(--accent)] transition-colors disabled:opacity-60"
+                    className="inline-flex items-center gap-3 rounded-full bg-[color:var(--brand)] text-white px-6 py-3.5 text-[14.5px] hover:bg-[color:var(--brand-soft)] transition-colors disabled:opacity-60"
                 >
                     <span>
-                        {submitting ? "Processing…" : `भुगतान करें — ₹${total}`}
+                        {submitting ? "Processing…" : `Pay — ₹${total}`}
                     </span>
                     <span>→</span>
                 </button>

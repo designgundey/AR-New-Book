@@ -33,7 +33,7 @@ export const Nav = ({ onReserve }) => {
                     <button
                         data-testid={TID.nav.reserveCta}
                         onClick={onReserve}
-                        className="text-[13px] px-4 py-2 rounded-full bg-[color:var(--ink)] text-[color:var(--paper)] hover:bg-[color:var(--accent)] transition-colors"
+                        className="text-[13px] px-4 py-2 rounded-full bg-[color:var(--brand)] text-white hover:bg-[color:var(--brand-soft)] transition-colors"
                     >
                         Reserve — ₹550
                     </button>
