@@ -91,47 +91,11 @@ export const HeroAlternative = ({ onReserve, remaining, total }) => {
                     </p>
                 </div>
 
-                {/* Middle Section — Stack of 3 Floating Books */}
-                <div className="w-full max-w-[540px] my-10 flex items-center justify-center relative min-h-[320px] md:min-h-[440px] z-10 animate-float">
-                    {/* Glowing backdrop behind the book stack */}
-                    <div className="absolute w-[280px] h-[280px] bg-[color:var(--accent)]/10 rounded-full blur-[90px] pointer-events-none z-0" />
-                    
-                    <div className="relative w-full flex items-center justify-center">
-                        {/* Book 2 (Left Back) */}
-                        <div 
-                            className="absolute w-[180px] sm:w-[220px] md:w-[250px] aspect-[3/4] opacity-55 select-none pointer-events-none transition-all duration-300 book-stack-left"
-                            style={{ 
-                                filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.22))",
-                                zIndex: 1
-                            }}
-                        >
-                            <img
-                                src="/assets/book.png"
-                                alt="Book cover copy left"
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-
-                        {/* Book 3 (Right Back) */}
-                        <div 
-                            className="absolute w-[180px] sm:w-[220px] md:w-[250px] aspect-[3/4] opacity-45 select-none pointer-events-none transition-all duration-300 book-stack-right"
-                            style={{ 
-                                filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.22))",
-                                zIndex: 2
-                            }}
-                        >
-                            <img
-                                src="/assets/book.png"
-                                alt="Book cover copy right"
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-
-                        {/* Book 1 (Front Interactive Book) */}
-                        <div className="relative w-full z-10" style={{ zIndex: 10 }}>
-                            <InteractiveBook testId={TID.hero.cover} />
-                        </div>
-                    </div>
+                {/* Middle Section — Centered Floating Book Cover */}
+                <div className="w-full max-w-[420px] my-10 flex items-center justify-center relative min-h-[300px] md:min-h-[420px] z-10 animate-float">
+                    {/* Glowing backdrop behind the book */}
+                    <div className="absolute w-[240px] h-[240px] bg-[color:var(--accent)]/10 rounded-full blur-[80px] pointer-events-none z-0" />
+                    <InteractiveBook testId={TID.hero.cover} />
                 </div>
 
                 {/* Bottom Section — Center Aligned Order Now CTA & Price */}

@@ -229,26 +229,3 @@ button {
     animation: soft-blink 5s ease-in-out infinite;
 }
 
-/* Stacked books styling for v2 */
-.book-stack-left {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) translateX(-75px) translateY(8px) rotate(-11deg) scale(0.9);
-}
-@media (min-width: 768px) {
-    .book-stack-left {
-        transform: translate(-50%, -50%) translateX(-110px) translateY(8px) rotate(-11deg) scale(0.9);
-    }
-}
-
-.book-stack-right {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) translateX(75px) translateY(12px) rotate(13deg) scale(0.86);
-}
-@media (min-width: 768px) {
-    .book-stack-right {
-        transform: translate(-50%, -50%) translateX(110px) translateY(12px) rotate(13deg) scale(0.86);
-    }
-}
-
