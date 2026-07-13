@@ -51,7 +51,7 @@ class TestInventory:
         data = r.json()
         assert set(["total", "reserved", "remaining", "price_inr"]).issubset(data.keys())
         assert data["total"] == 1500
-        assert data["price_inr"] == 1499
+        assert data["price_inr"] == 550
         assert isinstance(data["reserved"], int)
         assert data["remaining"] == data["total"] - data["reserved"]
 
@@ -72,7 +72,7 @@ class TestReservations:
         assert isinstance(data["edition_number"], int)
         assert data["edition_number"] >= 1
         assert data["copies"] == 1
-        assert data["total_amount_inr"] == 1499
+        assert data["total_amount_inr"] == 550
         assert data["payment_status"] == "demo_paid"
         assert data["full_name"] == payload["full_name"]
 
@@ -90,7 +90,7 @@ class TestReservations:
         assert r.status_code == 200, r.text
         data = r.json()
         assert data["copies"] == 3
-        assert data["total_amount_inr"] == 1499 * 3
+        assert data["total_amount_inr"] == 550 * 3
 
         inv_after = api_client.get(f"{API}/inventory").json()
         assert inv_after["reserved"] == inv_before["reserved"] + 3

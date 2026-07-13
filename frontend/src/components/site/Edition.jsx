@@ -74,7 +74,7 @@ export const Edition = ({ remaining, total, reserved }) => {
                 <div className="md:col-span-6 order-1 md:order-2">
                     <div className="relative aspect-[4/5] w-full max-w-[520px] mx-auto bg-white border hairline overflow-hidden">
                         <img
-                            src="https://customer-assets.emergentagent.com/job_arundhati-reads/artifacts/1kxmjep4_Group%205718.png"
+                            src="/assets/title-page.png"
                             alt="मेरी माँ मेरी गैंगस्टर · title page with author signature"
                             className="absolute inset-0 w-full h-full object-contain p-6 md:p-10 select-none"
                             draggable={false}

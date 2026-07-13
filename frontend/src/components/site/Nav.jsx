@@ -11,7 +11,7 @@ export const Nav = ({ onReserve }) => {
                 <div className="flex items-center gap-3">
                     <img
                         data-testid="nav-logo"
-                        src="https://customer-assets.emergentagent.com/job_arundhati-reads/artifacts/twqhvq20_logo%20rkp.png"
+                        src="/assets/logo.png"
                         alt="Rajkamal Prakashan · राजकमल प्रकाशन"
                         className="h-9 md:h-10 w-auto select-none"
                         draggable={false}

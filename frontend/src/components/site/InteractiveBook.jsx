@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 
-const BOOK_URL =
-    "https://customer-assets.emergentagent.com/job_arundhati-reads/artifacts/y00dd3k4_Book.png";
+const BOOK_URL = "/assets/book.png";
 
 /**
  * Interactive book with mouse-tracked 3D tilt + soft glare.

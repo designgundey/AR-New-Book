@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const SIGNATURE_URL =
-    "https://customer-assets.emergentagent.com/job_arundhati-reads/artifacts/pxznkyhi_SIGNATURE.png";
+const SIGNATURE_URL = "/assets/signature.png";
 
 /**
  * Full-screen signature intro. Draws the signature left→right on the paper
