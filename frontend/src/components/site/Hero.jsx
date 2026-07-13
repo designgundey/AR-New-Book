@@ -10,7 +10,7 @@ export const Hero = ({ onReserve, remaining, total }) => {
             <div className="max-w-[1240px] mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-16 md:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
                 {/* Left — editorial */}
                 <div className="lg:col-span-7">
-                    <div className="mb-8 inline-flex items-center gap-2.5 border hairline bg-white/70 backdrop-blur px-3.5 py-1.5 rounded-full">
+                    <div className="mb-10 inline-flex items-center gap-2.5 border hairline bg-white/70 backdrop-blur px-3.5 py-1.5 rounded-full">
                         <span className="relative flex h-1.5 w-1.5">
                             <span className="absolute inline-flex h-full w-full rounded-full bg-[color:var(--accent)] opacity-60 animate-ping" />
                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[color:var(--accent)]" />
@@ -21,13 +21,6 @@ export const Hero = ({ onReserve, remaining, total }) => {
                         <span className="text-[color:var(--line)]">·</span>
                         <span className="hindi text-[11px] tracking-[0.08em] text-[color:var(--ink-soft)]">
                             हस्ताक्षरित प्रति
-                        </span>
-                    </div>
-
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="h-px w-6 bg-[color:var(--ink-mute)]" />
-                        <span className="text-[11px] tracking-[0.22em] uppercase text-[color:var(--ink-mute)]">
-                            सीमित हस्ताक्षरित संस्करण · Signed limited edition
                         </span>
                     </div>
 
