@@ -83,10 +83,7 @@ export const Hero = ({ onReserve, remaining, total }) => {
                             className="flex items-baseline gap-2"
                         >
                             <span className="text-[22px] font-medium text-[color:var(--ink)]">
-                                ₹1499
-                            </span>
-                            <span className="text-sm line-through text-[color:var(--ink-mute)]">
-                                ₹1999
+                                ₹550
                             </span>
                             <span className="text-xs tracking-wide text-[color:var(--ink-mute)]">
                                 · free delivery

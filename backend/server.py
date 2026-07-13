@@ -23,7 +23,7 @@ api_router = APIRouter(prefix="/api")
 
 
 TOTAL_COPIES = 1500
-PRICE_INR = 1499
+PRICE_INR = 550
 
 
 class ReservationCreate(BaseModel):

@@ -51,7 +51,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
         }
     };
 
-    const total = 1499 * form.copies;
+    const total = 550 * form.copies;
 
     if (success) {
         return (
@@ -130,7 +130,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
                     <div className="text-[11px] tracking-[0.2em] uppercase text-[color:var(--ink-mute)]">
                         Price
                     </div>
-                    <div className="text-[22px] font-medium">₹1499</div>
+                    <div className="text-[22px] font-medium">₹550</div>
                 </div>
             </div>
 
@@ -222,7 +222,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
             <div className="mt-8 border-t hairline pt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="text-[13px] text-[color:var(--ink-soft)]">
                     <div>
-                        {form.copies} × ₹1499 ={" "}
+                        {form.copies} × ₹550 ={" "}
                         <span className="text-[color:var(--ink)] font-medium">
                             ₹{total}
                         </span>

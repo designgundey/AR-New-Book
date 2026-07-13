@@ -72,43 +72,28 @@ export const Edition = ({ remaining, total, reserved }) => {
                 </div>
 
                 <div className="md:col-span-6 order-1 md:order-2">
-                    <div className="relative aspect-[4/5] w-full max-w-[520px] mx-auto bg-white border hairline">
+                    <div className="relative aspect-[4/5] w-full max-w-[520px] mx-auto bg-white border hairline overflow-hidden">
                         <img
-                            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80"
-                            alt="Blue gel pen signature detail"
-                            className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-95"
+                            src="https://customer-assets.emergentagent.com/job_arundhati-reads/artifacts/1kxmjep4_Group%205718.png"
+                            alt="मेरी माँ मेरी गैंगस्टर · title page with author signature"
+                            className="absolute inset-0 w-full h-full object-contain p-6 md:p-10 select-none"
+                            draggable={false}
                         />
-                        <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
-                            <div className="flex items-start justify-between">
-                                <div className="text-[10px] tracking-[0.2em] uppercase text-[color:var(--ink-mute)]">
-                                    Title page · शीर्षक-पृष्ठ
-                                </div>
-                                <div className="text-[10px] tracking-[0.2em] uppercase text-[color:var(--ink)]">
-                                    Edition №{" "}
-                                    <span className="text-[color:var(--accent)]">
-                                        0834
-                                    </span>{" "}
-                                    / 1500
-                                </div>
-                            </div>
-                            <div className="flex items-end justify-between">
-                                <div>
-                                    <div
-                                        className="text-[color:var(--accent)] text-[46px] leading-none"
-                                        style={{
-                                            fontFamily:
-                                                '"Google Sans", cursive',
-                                            fontStyle: "italic",
-                                            letterSpacing: "-0.03em",
-                                        }}
-                                    >
-                                        Arundhati Roy
-                                    </div>
-                                    <div className="mt-2 text-[11px] tracking-[0.18em] uppercase text-[color:var(--ink-mute)]">
-                                        Signed by hand · blue gel pen
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="absolute top-4 left-4 text-[10px] tracking-[0.2em] uppercase text-[color:var(--ink-mute)]">
+                            Title page · शीर्षक-पृष्ठ
+                        </div>
+                        <div className="absolute top-4 right-4 text-[10px] tracking-[0.2em] uppercase text-[color:var(--ink)]">
+                            Edition №{" "}
+                            <span className="text-[color:var(--accent)]">
+                                0834
+                            </span>{" "}
+                            / 1500
+                        </div>
+                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[10.5px] tracking-[0.2em] uppercase text-[color:var(--ink-mute)]">
+                            <span>Signed by hand</span>
+                            <span className="text-[color:var(--accent)]">
+                                Blue gel pen
+                            </span>
                         </div>
                     </div>
                 </div>

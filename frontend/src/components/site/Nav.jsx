@@ -35,7 +35,7 @@ export const Nav = ({ onReserve }) => {
                         onClick={onReserve}
                         className="text-[13px] px-4 py-2 rounded-full bg-[color:var(--ink)] text-[color:var(--paper)] hover:bg-[color:var(--accent)] transition-colors"
                     >
-                        Reserve — ₹1499
+                        Reserve — ₹550
                     </button>
                 </div>
             </div>

@@ -19,7 +19,7 @@ function App() {
         total: 1500,
         reserved: 0,
         remaining: 1500,
-        price_inr: 1499,
+        price_inr: 550,
     });
     const [introDone, setIntroDone] = useState(false);
     const formRef = useRef(null);
