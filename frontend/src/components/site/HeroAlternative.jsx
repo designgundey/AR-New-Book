@@ -41,7 +41,7 @@ export const HeroAlternative = ({ onReserve, remaining, total }) => {
             {/* Base Layer: Giant background numbers with counting animation */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
                 <div 
-                    className="text-[200px] sm:text-[300px] md:text-[450px] lg:text-[580px] font-black tracking-tighter text-[color:var(--brand)] opacity-50 leading-none select-none"
+                    className="text-[200px] sm:text-[300px] md:text-[450px] lg:text-[580px] font-black tracking-tighter text-[color:var(--brand)] leading-none select-none animate-soft-blink"
                     style={{ 
                         fontFamily: '"Google Sans", "Product Sans", -apple-system, sans-serif', 
                         fontWeight: 900 

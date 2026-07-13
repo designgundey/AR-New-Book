@@ -216,3 +216,16 @@ button {
     animation: float 6s ease-in-out infinite;
 }
 
+/* Soft blinking (pulse) animation for giant numbers */
+@keyframes soft-blink {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.55;
+    }
+}
+.animate-soft-blink {
+    animation: soft-blink 5s ease-in-out infinite;
+}
+
