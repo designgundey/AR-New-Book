@@ -27,8 +27,8 @@ const isAlternative =
 function App() {
     const [inv, setInv] = useState({
         total: 1500,
-        reserved: 0,
-        remaining: 1500,
+        reserved: 1001,
+        remaining: 499,
         price_inr: 550,
     });
     const [introDone, setIntroDone] = useState(false);
@@ -51,7 +51,12 @@ function App() {
     const loadInventory = useCallback(async () => {
         try {
             const { data } = await axios.get(`${API}/inventory`);
-            setInv(data);
+            const mockRemaining = Math.max(0, 499 - data.reserved);
+            setInv({
+                ...data,
+                remaining: mockRemaining,
+                reserved: data.total - mockRemaining
+            });
         } catch (e) {
             /* silent */
         }
