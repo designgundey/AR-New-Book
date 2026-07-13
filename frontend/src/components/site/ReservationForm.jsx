@@ -58,7 +58,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
             <div
                 ref={ref}
                 data-testid={TID.form.success}
-                className="border hairline bg-[color:var(--paper-2)]/60 p-8 md:p-12"
+                className="border hairline bg-[color:var(--paper-2)]/60 p-8 md:p-12 rounded-2xl"
             >
                 <div className="text-[11px] tracking-[0.22em] uppercase text-[color:var(--accent)]">
                     ✓ Reserved
@@ -115,7 +115,7 @@ export const ReservationForm = React.forwardRef(({ onReserved }, ref) => {
         <form
             ref={ref}
             onSubmit={submit}
-            className="border hairline bg-white p-8 md:p-10"
+            className="border hairline bg-white p-8 md:p-10 rounded-2xl"
         >
             <div className="flex items-baseline justify-between border-b hairline pb-4">
                 <div>
