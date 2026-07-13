@@ -36,7 +36,7 @@ export const Nav = ({ onReserve, remaining, total }) => {
                             duration={2000}
                         />
                         <span className="text-[11px] tracking-[0.18em] uppercase text-[color:var(--ink-mute)]">
-                            / {total} copies remaining
+                            / {total} signed copies left
                         </span>
                     </div>
                 </div>
